@@ -1,0 +1,24 @@
+<div class="container" style="background-color: black; color: white">
+    <div class="panel panel-primary">
+        <div class="panel-heading">Movie Details</div>
+        <div class="panel-body">
+            <table class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                      <td>Name</td>
+                      <td>Name</td>
+                      <td>Name</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of movie">
+                        <td>{{item.name}}</td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.year}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    {{data}}
+</div>

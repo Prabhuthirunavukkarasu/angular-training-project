@@ -1,0 +1,50 @@
+<div class="">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">Movies</div>
+        <div class="panel-body">
+          <div class="panel panel-primary" *ngFor="let movie of movieList">
+            <div class="panel-heading">{{movie.name}} - {{movie.year}}</div>
+            <div class="panel-body">
+              {{movie.description}}
+              <button appInfoPop class="btn btn-primary pull-right" (click)="showDetails(movie)">Book ticket</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="panel panel-info">
+        <div class="panel-heading">Movies</div>
+        <div class="panel-body">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Year</th>
+                <th>Rating</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let movie of movieList;let index = i">
+                <td>{{movie.name}}</td>
+                <td>{{movie.year}}</td>
+                <td>{{movie.rating | rating}}</td>
+                <td>
+                  <div appInfoPop name="appInfoPop"><button class="btn btn-primary" (click)="showDetails(movie)">Book
+                      ticket</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <app-movie-details [movie]="movie"></app-movie-details>
+  </div>
+</div>
